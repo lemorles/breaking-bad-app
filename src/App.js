@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* <Route path="/" component={Home}  v5*/}
         <Route path="/characters" element={<Characters />} />
-        <Route path="/character/:id" element={<Character />} />
+        <Route path="/characters/:id" element={<Character />} />
         <Route path="/favs" element={<CharactersFav />} />
       </Routes>
     </div>
