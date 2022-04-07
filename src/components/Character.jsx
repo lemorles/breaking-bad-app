@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getCharacter } from "../redux/actions";
+import {
+  getCharacter,
+  addCharacterFav,
+  getAllCharacters,
+} from "../redux/actions";
 
 export default function Character() {
   const params = useParams();
@@ -11,10 +15,19 @@ export default function Character() {
 
   useEffect(() => {
     dispatch(getCharacter(params.id));
+    dispatch(getAllCharacters());
   }, [dispatch, params.id]);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    // console.log("click");
+    // dispatch(addCharacterFav(params.id));
+    dispatch(addCharacterFav(character));
+  };
 
   return (
     <div>
+      <button onClick={handleClick}>Agregar a favoritos</button>
       <h1>{character.name}</h1>
       <img src={character.img} alt={character.name} />
       <p>{character.nickname}</p>

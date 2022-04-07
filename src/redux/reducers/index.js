@@ -1,6 +1,7 @@
 const initialState = {
   allCharacters: [],
   character: {},
+  charactersFav: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -14,6 +15,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         character: action.payload[0],
+      };
+    case "ADD_CHARACTER_FAV":
+      return {
+        ...state,
+        charactersFav: [...state.charactersFav, action.payload],
       };
     default:
       return { ...state };

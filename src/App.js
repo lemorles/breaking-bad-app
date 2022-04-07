@@ -4,11 +4,13 @@ import Home from "./components/Home";
 import Character from "./components/Character";
 import Characters from "./components/Characters";
 import CharactersFav from "./components/CharactersFav";
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <div className="container">
       {/* Switch v5 */}
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/" component={Home}  v5*/}

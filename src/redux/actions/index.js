@@ -13,3 +13,7 @@ export const getCharacter = (id) => (dispatch) => {
       dispatch({ type: "GET_CHARACTER", payload: json });
     });
 };
+
+export const addCharacterFav = (character) => {
+  return { type: "ADD_CHARACTER_FAV", payload: character };
+};
