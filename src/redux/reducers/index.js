@@ -21,6 +21,13 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         charactersFav: [...state.charactersFav, action.payload],
       };
+    case "DELETE_CHARACTER_FAV":
+      return {
+        ...state,
+        charactersFav: state.charactersFav.filter(
+          (c) => c.char_id !== action.payload
+        ),
+      };
     default:
       return { ...state };
   }
